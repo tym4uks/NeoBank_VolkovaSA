@@ -1,0 +1,23 @@
+header{
+    border: 2px solid black;
+        
+    padding-left: 214px; 
+    padding-right: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1{
+   color: #B4387A;
+   font-size:'24px';  
+}
+header nav{
+    border: 2px solid black;
+    
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    justify-content: space-between;
+}

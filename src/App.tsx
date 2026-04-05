@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import Design from './components/Design';
+import Features from './components/Features';
+import Exchange from './components/Exchange';
+import MapServices from './components/MapServices';
+import CurrentNews from './components/CurrentNews';
+import Feedback from './components/Feedback';
+import Footer from './components/Footer';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return (
+<>
+{/* Заголовок */}
+<Header/>
+
+
+{/* Основная информация */}
+<main>
+  <Design />
+  <Features />
+  <Exchange/>
+  <MapServices/>
+  <CurrentNews />
+  <Feedback />
+</main>
+
+
+{/* Подвал */}
+<Footer/>
+
+</>
+);
 }
 
 export default App;

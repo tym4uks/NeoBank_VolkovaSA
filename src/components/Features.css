@@ -1,0 +1,10 @@
+.features_section{
+    border: 2px solid black;
+    
+    padding-left: 214px; 
+    padding-right: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
