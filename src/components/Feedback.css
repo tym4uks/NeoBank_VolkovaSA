@@ -8,3 +8,32 @@
     flex-direction: column;
     align-items: center;
 }
+
+.Feedback_subscribe {
+    display: flex;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    gap: 15px;
+}
+
+.Feedback_subscribe input{
+    border: 0px solid white;
+}
+
+.Feedback_button {
+      display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #686DF1;
+  width: 130px;
+  height: 50px;
+  border-width: 0px;
+  border-radius: 20px;
+  padding: 8;
+  gap: 8;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2%;
+}

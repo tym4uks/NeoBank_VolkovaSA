@@ -3,14 +3,14 @@ import './Footer.css';
 
 function Footer() {
     return(
-    <section className='footer_section'>
-        <div>
+    <footer>
+        <section>
             <img src='logo 1.svg'></img>
-        </div>
-        <div>
-            <p>+7 (495) 984 25 13</p>
-            <p>info@neoflex.ru</p>
-        </div>
+            <div>
+            <a href="tel:+79459842513">+7 (495) 984 25 13</a><br></br>
+            <a href="mailto:info@neoflex.ru">info@neoflex.ru</a>
+            </div>
+        </section>
         <nav>
             <p>About bank</p>
             <p>Ask a Questions</p>
@@ -23,8 +23,8 @@ function Footer() {
             <p>Business amd Processes</p>
             <p>Compliance and business ethics</p>
         </nav>
-    <p>We use cookies to personalize our services and improve the user experience of our website. Cookies are small files containing information about previous visits to a website. If you do not want to use cookies, please change your browser settings</p>
-    </section>
+        <p>We use cookies to personalize our services and improve the user experience of our website. Cookies are small files containing information about previous visits to a website. If you do not want to use cookies, please change your browser settings</p>
+    </footer>
     );
 }
 

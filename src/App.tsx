@@ -4,13 +4,17 @@ import Design from './components/Design';
 import Features from './components/Features';
 import Exchange from './components/Exchange';
 import MapServices from './components/MapServices';
-import CurrentNews from './components/CurrentNews';
+import CurrentNews from './components/CurrentNews/CurrentNews';
 import Feedback from './components/Feedback';
 import Footer from './components/Footer';
 
+
 import './App.css';
 
+
+
 function App() {
+
 return (
 <>
 {/* Заголовок */}
@@ -25,6 +29,7 @@ return (
   <MapServices/>
   <CurrentNews />
   <Feedback />
+
 </main>
 
 

@@ -1,0 +1,118 @@
+.slider-container {
+  width: 100%;
+  position: relative;
+  user-select: none;
+  
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.slider-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: red;
+}
+
+/* при выделении */
+.slider-btn:hover:not(:disabled) {
+  
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/*Заблокиров */
+.slider-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  
+}
+
+.slider-card {
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.slider-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.slider-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.slider-card p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .slider-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .slider-card {
+    padding: 16px;
+  }
+  
+  .slider-card h3 {
+    font-size: 18px;
+  }
+  
+  .slider-card p {
+    font-size: 14px;
+  }
+  
+  .slider-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
