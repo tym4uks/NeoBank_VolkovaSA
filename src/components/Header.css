@@ -1,9 +1,6 @@
 header{
-    border: 2px solid black;
-        
-    padding-left: 214px; 
-    padding-right: 150px;
-
+    max-width: 80%;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,10 +11,13 @@ header h1{
    font-size:'24px';  
 }
 header nav{
-    border: 2px solid black;
-    
     display: flex;
     align-items: center;
-    gap: 200px;
+    gap: 40px;
     justify-content: space-between;
+}
+
+header p{
+    font-size: 16px;
+    font-weight: 700;
 }

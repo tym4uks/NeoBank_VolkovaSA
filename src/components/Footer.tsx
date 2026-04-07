@@ -4,11 +4,12 @@ import './Footer.css';
 function Footer() {
     return(
     <footer>
+        <>
         <section>
             <img src='logo 1.svg'></img>
             <div>
-            <a href="tel:+79459842513">+7 (495) 984 25 13</a><br></br>
-            <a href="mailto:info@neoflex.ru">info@neoflex.ru</a>
+            <h3><a href="tel:+79459842513">+7 (495) 984 25 13</a></h3>
+            <p><a href="mailto:info@neoflex.ru">info@neoflex.ru</a></p>
             </div>
         </section>
         <nav>
@@ -24,6 +25,7 @@ function Footer() {
             <p>Compliance and business ethics</p>
         </nav>
         <p>We use cookies to personalize our services and improve the user experience of our website. Cookies are small files containing information about previous visits to a website. If you do not want to use cookies, please change your browser settings</p>
+    </>
     </footer>
     );
 }

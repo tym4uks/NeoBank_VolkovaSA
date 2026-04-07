@@ -43,7 +43,17 @@ const APIS =  {
     }
   };
 
-
+const formatDate = (date: Date | null | undefined):string => {
+    if (!date) return '';
+    return date.toLocaleDateString('ru-RU', {
+      // hour: '2-digit',
+      // minute: '2-digit',
+      // second: '2-digit'
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  };
 
 const Exchange: React.FC = () => {
   const currenciesList: Currency[] = [
@@ -56,30 +66,56 @@ const Exchange: React.FC = () => {
   ];
 
 const [rates, setRates] = useState<Rate[]>([]);
+const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
 
-  useEffect(() => {
-  axios.get(APIS.url)
-    .then(response => {
+//   useEffect(() => {
+//   axios.get(APIS.url)
+//     .then(response => {
+//       const parsed = APIS.parseResponse(response.data);
+//       const ratesWithDetails = currenciesList.map(currency => ({
+//         ...currency,
+//         rate: parsed.rates[currency.code],      // 1 USD = ? RUB
+//         inverseRate: 1 / parsed.rates[currency.code], // 1 RUB = ? USD
+//         value: parsed.rates[currency.code]
+//       }));
+//       setRates(ratesWithDetails);
+//       setLastUpdate(new Date());
+//     });
+// }, []);
+  const fetchRates = () => {
+    axios.get(APIS.url).then(response => {
       const parsed = APIS.parseResponse(response.data);
       const ratesWithDetails = currenciesList.map(currency => ({
         ...currency,
-        rate: parsed.rates[currency.code],      // 1 USD = ? RUB
-        inverseRate: 1 / parsed.rates[currency.code], // 1 RUB = ? USD
+        rate: parsed.rates[currency.code],
+        inverseRate: 1 / parsed.rates[currency.code],
         value: parsed.rates[currency.code]
       }));
       setRates(ratesWithDetails);
+      setLastUpdate(new Date());
     });
-}, []);
+  };
 
+  useEffect(() => {
+    fetchRates(); // Первая загрузка
+    const interval = setInterval(fetchRates, 15 * 60 * 1000); // Каждые 15 минут
+    return () => clearInterval(interval); // Очистка при размонтировании
+  }, []);
 
     return(
         <section className='Exchange_section'>
         <div className='Exchange_header'>
             <h3>Exchange rate in internet bank</h3>
-            <p>Update...</p>
+            <h6>
+            {lastUpdate && (
+              <div className="last-update">
+                <span>Update every 15 minutes, MSC: {formatDate(lastUpdate)}</span>
+              </div>
+            )}
+            </h6>
         </div>
         <div className='Exchange_header'>
-        <p>Currency</p>
+        <h5>Currency</h5>
         </div>
         <div className='Exchange_body'>
             <div className='Exchange_grid'>
@@ -95,7 +131,7 @@ const [rates, setRates] = useState<Rate[]>([]);
             <img src='Group.svg'></img>
         </div>
         <div className='Exchange_header'>
-        <p>All courses</p>
+        <h4>All courses</h4>
         </div>
         </section>
     );

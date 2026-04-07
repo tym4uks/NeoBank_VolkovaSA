@@ -1,9 +1,8 @@
 .design_section{
-    border: 2px solid black;
-    
-    padding-left: 214px; 
-    padding-right: 150px;
 
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,9 +10,8 @@
 }
 
 .design_section__div{
-    border: 2px solid black;
-
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
+    gap: 10px;
 }

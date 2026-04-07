@@ -87,20 +87,26 @@ function CardSlider({
           ))}
         </div>
       </div>
-              <div className="slider-controls">
+          <div className="slider-controls">
           <button 
             onClick={handlePrev} 
             disabled={currentIndex === 0 || isTransitioning}
             className="slider-btn prev-btn"
           >
-            <img src='Left.svg'></img>
+            {/* <img src='Left.svg'></img> */}
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.6211 16.0928H9.46318V23.4842C9.46318 23.6772 9.21669 23.7582 9.10217 23.6028L0.621076 12.0928L9.10217 0.582708C9.21669 0.427282 9.46318 0.508285 9.46318 0.701347V8.09276H24.6211" stroke="#222222"/>
+            </svg>
           </button>
           <button 
             onClick={handleNext} 
             disabled={currentIndex >= maxIndex || isTransitioning}
             className="slider-btn next-btn"
           >
-            <img src='Right.svg'></img>
+            {/* <img src='Right.svg'></img> */}
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 8.09277H15.1579V0.701357C15.1579 0.508295 15.4044 0.427291 15.5189 0.582717L24 12.0928L15.5189 23.6028C15.4044 23.7583 15.1579 23.6773 15.1579 23.4842V16.0928H0" stroke="#222222"/>
+            </svg>
           </button>
         </div>
     </div>

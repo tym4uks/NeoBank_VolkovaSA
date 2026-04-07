@@ -22,26 +22,33 @@
 
 .slider-controls {
   display: flex;
+  justify-content: end;
   gap: 12px;
+
 }
 
 .slider-btn {
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   font-size: 16px;
   font-weight: 500;
   border: none;
+  height: 64px;
+  width: 64px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #ffffff;
-  color: red;
+  
 }
 
 /* при выделении */
-.slider-btn:hover:not(:disabled) {
-  
-  background-color: #0056b3;
+.slider-btn:hover:not(:disabled),.path {
+  background-color:#003CFF;
   transform: translateY(-2px);
+}
+
+.slider-btn:hover svg path {
+    stroke: white; /* Белая стрелка */
 }
 
 /*Заблокиров */

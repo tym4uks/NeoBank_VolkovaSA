@@ -1,8 +1,8 @@
 .MapServices_section{
-    border: 2px solid black;
-    
-    padding-left: 214px; 
-    padding-right: 150px;
+
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;

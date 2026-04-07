@@ -10,7 +10,7 @@ function Features() {
         <div>
             <h2>We Provide Many Features You Can Use</h2>
             <p>You can explore the features that we provide with fun and have their own functions each feature</p>
-            <ul>
+            <ul className="features-list">
                 <li>Powerfull online protection.</li>
                 <li>Cashback without borders.</li>
                 <li>Personal design</li>
