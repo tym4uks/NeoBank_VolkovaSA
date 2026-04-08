@@ -8,3 +8,41 @@
     flex-direction: column;
     align-items: center;
 }
+
+/* Tablet (max-width: 920px) */
+@media (max-width: 920px) {
+    .MapServices_section {
+        padding: 16px;
+    }
+    
+    .MapServices_section h3 {
+        font-size: 24px;
+    }
+    
+    .MapServices_section p {
+        font-size: 14px;
+    }
+    
+    .MapServices_section picture img {
+        max-width: 90%;
+    }
+}
+
+/* Mobile (max-width: 500px) */
+@media (max-width: 500px) {
+    .MapServices_section {
+        padding: 12px;
+    }
+    
+    .MapServices_section h3 {
+        font-size: 20px;
+    }
+    
+    .MapServices_section p {
+        font-size: 13px;
+    }
+    
+    .MapServices_section picture img {
+        max-width: 100%;
+    }
+}

@@ -21,3 +21,59 @@ header p{
     font-size: 16px;
     font-weight: 700;
 }
+
+
+/* Tablet (max-width: 920px) */
+@media (max-width: 920px) {
+    header {
+        max-width: 90%;
+        padding: 16px 0;
+    }
+    
+    header h1 {
+        font-size: 22px;
+    }
+    
+    header nav {
+        gap: 25px;
+    }
+    
+    header p {
+        font-size: 14px;
+    }
+    
+    header button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile (max-width: 500px) */
+@media (max-width: 500px) {
+    header {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+    
+    header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    header p {
+        font-size: 13px;
+    }
+    
+    header button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
