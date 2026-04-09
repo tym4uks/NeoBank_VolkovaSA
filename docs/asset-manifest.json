@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/NeoBank_VolkovaSA/static/css/main.6d10cda9.css",
-    "main.js": "/NeoBank_VolkovaSA/static/js/main.c6475164.js",
+    "main.css": "/NeoBank_VolkovaSA/static/css/main.21a00bc1.css",
+    "main.js": "/NeoBank_VolkovaSA/static/js/main.27b53ab3.js",
     "static/js/453.78f5d81e.chunk.js": "/NeoBank_VolkovaSA/static/js/453.78f5d81e.chunk.js",
     "static/media/ubuntu-all-300.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300.5ae9997bfac0f4a17c3d.woff",
     "static/media/ubuntu-all-300-italic.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300-italic.e72c85f1cfbe1298f643.woff",
@@ -20,12 +20,12 @@
     "static/media/ubuntu-all-500.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-500.ef0742491752ff949c15.woff2",
     "static/media/ubuntu-all-700.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-700.8fb99a539d97e4043112.woff2",
     "index.html": "/NeoBank_VolkovaSA/index.html",
-    "main.6d10cda9.css.map": "/NeoBank_VolkovaSA/static/css/main.6d10cda9.css.map",
-    "main.c6475164.js.map": "/NeoBank_VolkovaSA/static/js/main.c6475164.js.map",
+    "main.21a00bc1.css.map": "/NeoBank_VolkovaSA/static/css/main.21a00bc1.css.map",
+    "main.27b53ab3.js.map": "/NeoBank_VolkovaSA/static/js/main.27b53ab3.js.map",
     "453.78f5d81e.chunk.js.map": "/NeoBank_VolkovaSA/static/js/453.78f5d81e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d10cda9.css",
-    "static/js/main.c6475164.js"
+    "static/css/main.21a00bc1.css",
+    "static/js/main.27b53ab3.js"
   ]
 }
