@@ -10,7 +10,7 @@ return (
             <button>Choose the card</button>
         </div>
         <div className='design_section__div'>
-            <img src={`${CARDS_PATH}/cardImage1.png`}></img>
+            <img src={`${process.env.PUBLIC_URL}/cardImage1.png`}></img>
             <img src={`${CARDS_PATH}/cardImage2.png`}></img>
             <img src={`${CARDS_PATH}/cardImage3.png`}></img>
             <img src={`${CARDS_PATH}/cardImage4.png`}></img>
