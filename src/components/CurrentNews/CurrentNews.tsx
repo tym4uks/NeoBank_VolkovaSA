@@ -19,6 +19,7 @@ import './CurrentNews.css';
     ];
 
 function CurrentNews() {
+    const CARDS_PATH = '/assets';
     const [index, setIndex] = useState(0);
     const [cardsToShow, setCardsToShow] = useState(3);
     const [cardWidth, setCardWidth] = useState(320);
@@ -30,8 +31,8 @@ function CurrentNews() {
     const next = () => setIndex(prev => Math.min(prev + 1, maxIndex));
     const prev = () => setIndex(prev => Math.max(prev - 1, 0));
     
- // Функция обновления параметров слайдера в зависимости от ширины экрана
-  const updateSliderParams = () => {
+    // Функция обновления параметров слайдера в зависимости от ширины экрана
+    const updateSliderParams = () => {
     const width = window.innerWidth;
     
     // Определяем количество карточек и отступы
@@ -82,7 +83,7 @@ function CurrentNews() {
 
 return (
     <section className='CurrentNews_section'>
-        
+
         <h3>Current news from the world of finance</h3>
         <p>We update the news feed every 15 minutes. You can learn more by clicking on the news you are interested in</p>
         
@@ -90,7 +91,7 @@ return (
             <div className="slider-track" style={{ transform: `translateX(-${translateValue}px)` }}>
             {cards.map(card => (
                 <div key={card.id} className="slider-card">
-                <img src={card.img}/>
+                <img src={`${CARDS_PATH}/${card.img}`}/>
                 <h3>{card.title}</h3>
                 <p>{card.content}</p>
                 </div>

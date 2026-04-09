@@ -24,9 +24,9 @@ interface Currency {
 interface Rate extends Currency {
   value: number;
   rate: number;        // Курс 1 валюты к RUB
-  inverseRate: number; // Обратный курс 1 RUB к валюте
-}
 
+}
+const CARDS_PATH = '/assets';
 const APIS =  {
     name: 'floatrates',
     url: 'https://www.floatrates.com/daily/rub.json',
@@ -46,9 +46,6 @@ const APIS =  {
 const formatDate = (date: Date | null | undefined):string => {
     if (!date) return '';
     return date.toLocaleDateString('ru-RU', {
-      // hour: '2-digit',
-      // minute: '2-digit',
-      // second: '2-digit'
       day: '2-digit',
       month: '2-digit',
       year: 'numeric'
@@ -68,27 +65,12 @@ const Exchange: React.FC = () => {
 const [rates, setRates] = useState<Rate[]>([]);
 const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
 
-//   useEffect(() => {
-//   axios.get(APIS.url)
-//     .then(response => {
-//       const parsed = APIS.parseResponse(response.data);
-//       const ratesWithDetails = currenciesList.map(currency => ({
-//         ...currency,
-//         rate: parsed.rates[currency.code],      // 1 USD = ? RUB
-//         inverseRate: 1 / parsed.rates[currency.code], // 1 RUB = ? USD
-//         value: parsed.rates[currency.code]
-//       }));
-//       setRates(ratesWithDetails);
-//       setLastUpdate(new Date());
-//     });
-// }, []);
   const fetchRates = () => {
     axios.get(APIS.url).then(response => {
       const parsed = APIS.parseResponse(response.data);
       const ratesWithDetails = currenciesList.map(currency => ({
         ...currency,
         rate: parsed.rates[currency.code],
-        inverseRate: 1 / parsed.rates[currency.code],
         value: parsed.rates[currency.code]
       }));
       setRates(ratesWithDetails);
@@ -101,21 +83,21 @@ const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
     const interval = setInterval(fetchRates, 15 * 60 * 1000); // Каждые 15 минут
     return () => clearInterval(interval); // Очистка при размонтировании
   }, []);
-
+  
     return(
         <section className='Exchange_section'>
         <div className='Exchange_header'>
             <h3>Exchange rate in internet bank</h3>
-            <h6>
+            <p>
             {lastUpdate && (
               <div className="last-update">
                 <span>Update every 15 minutes, MSC: {formatDate(lastUpdate)}</span>
               </div>
             )}
-            </h6>
+            </p>
         </div>
         <div className='Exchange_header'>
-        <h5>Currency</h5>
+        <p className="Exchange_p__Currency">Currency</p>
         </div>
         <div className='Exchange_body'>
             <div className='Exchange_grid'>
@@ -128,10 +110,10 @@ const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
                 </article>
               ))}
             </div>
-            <img src='Group.svg'></img>
+            <img src={`${CARDS_PATH}/Group.svg`}></img>
         </div>
         <div className='Exchange_header'>
-        <h4>All courses</h4>
+        <a>All courses</a>
         </div>
         </section>
     );

@@ -1,17 +1,23 @@
 .MapServices_section{
-
-    max-width: 80%;
+    max-width: 1300px;
     margin: auto;
     padding: 20px;
 
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
+}
+
+.MapServices_section img {
+    display: flex;
+    width: 100%;
 }
 
 /* Tablet (max-width: 920px) */
 @media (max-width: 920px) {
     .MapServices_section {
+        max-width: 90%;
         padding: 16px;
     }
     
@@ -23,7 +29,7 @@
         font-size: 14px;
     }
     
-    .MapServices_section picture img {
+    .MapServices_section img {
         max-width: 90%;
     }
 }
@@ -32,6 +38,7 @@
 @media (max-width: 500px) {
     .MapServices_section {
         padding: 12px;
+        max-width: 100%;
     }
     
     .MapServices_section h3 {
@@ -42,7 +49,7 @@
         font-size: 13px;
     }
     
-    .MapServices_section picture img {
+    .MapServices_section img {
         max-width: 100%;
     }
 }

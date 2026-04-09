@@ -1,15 +1,16 @@
 header{
-    max-width: 80%;
+    max-width: 1300px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header h1{
+header title{
    color: #B4387A;
    font-size:'24px';  
 }
+
 header nav{
     display: flex;
     align-items: center;
@@ -17,7 +18,7 @@ header nav{
     justify-content: space-between;
 }
 
-header p{
+header a{
     font-size: 16px;
     font-weight: 700;
 }
@@ -30,7 +31,7 @@ header p{
         padding: 16px 0;
     }
     
-    header h1 {
+    header title {
         font-size: 22px;
     }
     
@@ -38,7 +39,7 @@ header p{
         gap: 25px;
     }
     
-    header p {
+    header a{
         font-size: 14px;
     }
     
@@ -57,7 +58,7 @@ header p{
         gap: 12px;
     }
     
-    header h1 {
+    header title {
         font-size: 20px;
     }
     
@@ -68,7 +69,7 @@ header p{
         gap: 20px;
     }
     
-    header p {
+    header a {
         font-size: 13px;
     }
     

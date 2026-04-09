@@ -1,12 +1,13 @@
+import '@openfonts/ubuntu_all/index.css';
 import React from 'react';
-import Header from './components/Header';
-import Design from './components/Design';
-import Features from './components/Features';
-import Exchange from './components/Exchange';
-import MapServices from './components/MapServices';
+import Header from './components/Header/Header';
+import Design from './components/Design/Design';
+import Features from './components/Features/Features';
+import Exchange from './components/Exchange/Exchange';
+import MapServices from './components/MapServices/MapServices';
 import CurrentNews from './components/CurrentNews/CurrentNews';
-import Feedback from './components/Feedback';
-import Footer from './components/Footer';
+import Feedback from './components/Feedback/Feedback';
+import Footer from './components/Footer/Footer';
 
 
 import './App.css';

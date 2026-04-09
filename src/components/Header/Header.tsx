@@ -7,10 +7,10 @@ function Header() {
     <header>
         <h1>NeoBank</h1>
         <nav>
-            <p>Credit card</p>
-            <p>Product</p>
-            <p>Account</p>
-            <p>Resources</p>
+            <a>Credit card</a>
+            <a>Product</a>
+            <a>Account</a>
+            <a>Resources</a>
         </nav>
         <button>Online Bank</button>
     </header>

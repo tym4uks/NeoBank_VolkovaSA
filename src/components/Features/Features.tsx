@@ -2,10 +2,11 @@ import { useState } from 'react';
 import './Features.css';
 
 function Features() {
+    const CARDS_PATH = '/assets';
     return(
     <section className='features_section'>
         <div>
-            <img src='Illustration 2.png'></img>
+            <img src={`${CARDS_PATH}/Illustration 2.png`}></img>
         </div>
         <div>
             <h2>We Provide Many Features You Can Use</h2>

@@ -1,5 +1,5 @@
 .Exchange_section{    
-    max-width: 80%;
+    max-width: 1300px;
     margin: auto;
     padding: 20px;
     border-radius: 20px;
@@ -21,18 +21,18 @@
     font-weight: 500;
 }
 
-.Exchange_header h4 {
+.Exchange_header a {
     font-size: 20px;
     font-weight: 700;
     color: #ffffff;
 }
 
-.Exchange_header h5 {
+.Exchange_p__Currency {
     font-size: 20px;
     font-weight: 500;
 }
 
-.Exchange_header h6 {
+.Exchange_header p {
     font-size: 16px;
     font-weight: 500;
 }
@@ -79,15 +79,15 @@
         font-size: 26px;
     }
     
-    .Exchange_header h4 {
+    .Exchange_header a {
         font-size: 18px;
     }
     
-    .Exchange_header h5 {
+    .Exchange_p__Currency {
         font-size: 18px;
     }
     
-    .Exchange_header h6 {
+    .Exchange_header p {
         font-size: 14px;
     }
     
@@ -133,15 +133,15 @@
         font-size: 22px;
     }
     
-    .Exchange_header h4 {
+    .Exchange_header a {
         font-size: 16px;
     }
     
-    .Exchange_header h5 {
+    .Exchange_p__Currency {
         font-size: 16px;
     }
     
-    .Exchange_header h6 {
+    .Exchange_header p {
         font-size: 13px;
     }
     

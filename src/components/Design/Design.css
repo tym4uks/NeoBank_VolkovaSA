@@ -1,6 +1,5 @@
 .design_section{
-
-    max-width: 80%;
+    max-width: 1300px;
     margin: auto;
     padding: 20px;
     display: flex;
@@ -16,8 +15,13 @@
     gap: 10px;
 }
 
-.design_section__div > img {
-   display: flex;
+.design_section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    
+}
+
+.design_section > img {
    width: 100%; 
    height: 100%; 
 }
