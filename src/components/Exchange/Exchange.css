@@ -1,43 +1,54 @@
-.Exchange_section{    
+* {
+    box-sizing: border-box;
+}
+
+.Exchange_section {    
     max-width: 1300px;
-    margin: auto;
+    width: 100%;          /* Добавлено */
+    margin: 0 auto;       /* Исправлено с "auto" на "0 auto" */
     padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(rgba(244, 244, 244, 0.9), #b2b2b2);
+    box-sizing: border-box;
 }
 
-.Exchange_header{
+.Exchange_header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
 }
+
 .Exchange_header h3 {
     font-size: 30px;
     font-weight: 500;
+    margin: 0;
 }
 
 .Exchange_header a {
     font-size: 20px;
     font-weight: 700;
     color: #ffffff;
+    text-decoration: none;
 }
 
 .Exchange_p__Currency {
     font-size: 20px;
     font-weight: 500;
+    margin: 0;
 }
 
 .Exchange_header p {
     font-size: 16px;
     font-weight: 500;
+    margin: 0;
 }
 
-.Exchange_body{
+.Exchange_body {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,19 +56,19 @@
     gap: 20px;
 }
 
-.Exchange_grid{
+.Exchange_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.Exchange_code{
+.Exchange_code {
     font-weight: 700;
     font-size: 20px;
     color: #808080;
 }
 
-.Exchange_rate{
+.Exchange_rate {
     font-weight: 700;
     font-size: 20px;
     color: #000000;
@@ -66,8 +77,11 @@
 /* Tablet (max-width: 920px) */
 @media (max-width: 920px) {
     .Exchange_section {
-        max-width: 90%;
-        padding: 16px;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 20px;      /* Увеличено с 16px для заметности */
+        border-radius: 0;
     }
     
     .Exchange_header {
@@ -110,7 +124,7 @@
         font-size: 18px;
     }
 
-    .Exchange_section img{
+    .Exchange_section img {
         display: none;
     }
 }
@@ -119,8 +133,10 @@
 @media (max-width: 500px) {
     .Exchange_section {
         max-width: 100%;
-        padding: 12px;
-        border-radius: 15px;
+        width: 100%;
+        margin: 0;
+        padding: 16px 12px;
+        border-radius: 0;
     }
     
     .Exchange_header {
@@ -161,7 +177,8 @@
     .Exchange_rate {
         font-size: 16px;
     }
-    .Exchange_section img{
+    
+    .Exchange_section img {
         display: none;
     }
 }

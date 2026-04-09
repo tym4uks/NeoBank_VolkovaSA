@@ -6,7 +6,7 @@ function Features() {
     return(
     <section className='features_section'>
         <div>
-            <img src={`${CARDS_PATH}/Illustration 2.png`}></img>
+            <img src={`${process.env.PUBLIC_URL}/${CARDS_PATH}/Illustration 2.png`}></img>
         </div>
         <div>
             <h2>We Provide Many Features You Can Use</h2>
@@ -14,8 +14,8 @@ function Features() {
             <ul className="features-list">
                 <li>Powerfull online protection.</li>
                 <li>Cashback without borders.</li>
-                <li>Personal design</li>
-                <li>Work anywhere in the world</li>
+                <li>Personal design.</li>
+                <li>Work anywhere in the world.</li>
             </ul>
         </div>
     </section>

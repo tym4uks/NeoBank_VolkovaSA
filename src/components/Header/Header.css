@@ -1,37 +1,47 @@
-header{
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+}
+
+header {
     max-width: 1300px;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px; /* Отступы и на десктопе */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
-header title{
-   color: #B4387A;
-   font-size:'24px';  
+header h1 {
+    color: #B4387A;
+    font-size: 24px;
 }
 
-header nav{
+header nav {
     display: flex;
     align-items: center;
     gap: 40px;
     justify-content: space-between;
 }
 
-header a{
+header a {
     font-size: 16px;
     font-weight: 700;
+    text-decoration: none;
+    color: #222222;
 }
-
 
 /* Tablet (max-width: 920px) */
 @media (max-width: 920px) {
     header {
-        max-width: 90%;
-        padding: 16px 0;
+        max-width: 100%;
+        padding: 16px 20px;
+        box-sizing: border-box;
     }
     
-    header title {
+    header h1 {
         font-size: 22px;
     }
     
@@ -39,7 +49,7 @@ header a{
         gap: 25px;
     }
     
-    header a{
+    header a {
         font-size: 14px;
     }
     
@@ -56,9 +66,10 @@ header a{
         flex-wrap: wrap;
         padding: 12px 16px;
         gap: 12px;
+        box-sizing: border-box;
     }
     
-    header title {
+    header h1 {
         font-size: 20px;
     }
     

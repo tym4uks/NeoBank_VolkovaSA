@@ -1,7 +1,5 @@
 body {
   background-color: #F5F4FF;
-  /* Сделать процентные отступы */
-
 }
 
 button{
@@ -22,5 +20,26 @@ button{
   font-family: Ubuntu;
 }
 
+/* Tablet (max-width: 920px) */
+@media (max-width: 920px) {
+    button {
+        width: 120px;
+        height: 45px;
+        font-size: 15px;
+        border-radius: 14px;
+        padding: 6px;
+    }
+}
 
+/* Mobile (max-width: 500px) */
+@media (max-width: 500px) {
+    button {
+        width: 100%;
+        max-width: 200px;
+        height: 45px;
+        font-size: 14px;
+        border-radius: 12px;
+        padding: 6px;
+    }
+}
 

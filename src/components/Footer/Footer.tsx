@@ -7,7 +7,7 @@ function Footer() {
     <footer>
         <section>
         <div className='footer_title'>
-            <img src={`${CARDS_PATH}/logo 1.svg`}></img>
+            <img src={`${process.env.PUBLIC_URL}/${CARDS_PATH}/logo 1.svg`}></img>
             <div>
             <a href="tel:+79459842513" className='footer_tel'>+7 (495) 984 25 13</a><br/>
             <a href="mailto:info@neoflex.ru" className='footer_email'>info@neoflex.ru</a>

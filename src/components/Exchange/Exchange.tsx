@@ -110,7 +110,7 @@ const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
                 </article>
               ))}
             </div>
-            <img src={`${CARDS_PATH}/Group.svg`}></img>
+            <img src={`${process.env.PUBLIC_URL}/${CARDS_PATH}/Group.svg`}></img>
         </div>
         <div className='Exchange_header'>
         <a>All courses</a>

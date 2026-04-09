@@ -91,7 +91,7 @@ return (
             <div className="slider-track" style={{ transform: `translateX(-${translateValue}px)` }}>
             {cards.map(card => (
                 <div key={card.id} className="slider-card">
-                <img src={`${CARDS_PATH}/${card.img}`}/>
+                <img src={`${process.env.PUBLIC_URL}/${CARDS_PATH}/${card.img}`}/>
                 <h3>{card.title}</h3>
                 <p>{card.content}</p>
                 </div>
