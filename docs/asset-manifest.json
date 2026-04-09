@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/NeoBank_VolkovaSA/static/css/main.6d10cda9.css",
+    "main.js": "/NeoBank_VolkovaSA/static/js/main.c6475164.js",
+    "static/js/453.78f5d81e.chunk.js": "/NeoBank_VolkovaSA/static/js/453.78f5d81e.chunk.js",
+    "static/media/ubuntu-all-300.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300.5ae9997bfac0f4a17c3d.woff",
+    "static/media/ubuntu-all-300-italic.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300-italic.e72c85f1cfbe1298f643.woff",
+    "static/media/ubuntu-all-400-italic.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-400-italic.807879942d5cdfc023ba.woff",
+    "static/media/ubuntu-all-500-italic.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-500-italic.67290fcc0405ec7adffb.woff",
+    "static/media/ubuntu-all-400.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-400.8d16c52b0e5c119ad95a.woff",
+    "static/media/ubuntu-all-700-italic.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-700-italic.e22ff5a057b7ff09bb0b.woff",
+    "static/media/ubuntu-all-300.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300.f2313525608995797d46.woff2",
+    "static/media/ubuntu-all-300-italic.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-300-italic.024587cfb1875101e830.woff2",
+    "static/media/ubuntu-all-500.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-500.8bf214ffd983cd82a07e.woff",
+    "static/media/ubuntu-all-400-italic.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-400-italic.71ac1aa4ade49b76e45a.woff2",
+    "static/media/ubuntu-all-700.woff": "/NeoBank_VolkovaSA/static/media/ubuntu-all-700.0c0fd8edb6614d95e5b2.woff",
+    "static/media/ubuntu-all-500-italic.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-500-italic.01eb34ec29e929260014.woff2",
+    "static/media/ubuntu-all-400.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-400.643e30edae4dcb5c95b7.woff2",
+    "static/media/ubuntu-all-700-italic.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-700-italic.5dcbd5ce10fd02ad2174.woff2",
+    "static/media/ubuntu-all-500.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-500.ef0742491752ff949c15.woff2",
+    "static/media/ubuntu-all-700.woff2": "/NeoBank_VolkovaSA/static/media/ubuntu-all-700.8fb99a539d97e4043112.woff2",
+    "index.html": "/NeoBank_VolkovaSA/index.html",
+    "main.6d10cda9.css.map": "/NeoBank_VolkovaSA/static/css/main.6d10cda9.css.map",
+    "main.c6475164.js.map": "/NeoBank_VolkovaSA/static/js/main.c6475164.js.map",
+    "453.78f5d81e.chunk.js.map": "/NeoBank_VolkovaSA/static/js/453.78f5d81e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d10cda9.css",
+    "static/js/main.c6475164.js"
+  ]
+}
