@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
-import './Exchange.css';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import "./Exchange.css";
+import { formatDate } from "../utility";
+import { PATHS } from "../../constants/paths";
 
 interface CurrencyData {
   rate: number;
@@ -23,55 +25,52 @@ interface Currency {
 }
 interface Rate extends Currency {
   value: number;
-  rate: number;        // Курс 1 валюты к RUB
-
+  rate: number;
 }
-const CARDS_PATH = '/assets';
-const APIS =  {
-    name: 'floatrates',
-    url: 'https://www.floatrates.com/daily/rub.json',
-    getParams: () => ({}),
-    parseResponse: (data: ApiResponse) => {
-      const rates: { [key: string]: number } = {};
-      const currenciesMap: { [key: string]: string } = { usd: 'USD', eur: 'EUR', gbp: 'GBP', cny: 'CNY', jpy: 'JPY', chf: 'CHF' };
-      Object.keys(currenciesMap).forEach(key => {
-        if (data[key]) {
-          rates[currenciesMap[key]] = 1 / data[key].rate;
-        }
-      });
-      return { rates, date: new Date().toISOString().split('T')[0] };
-    }
-  };
 
-const formatDate = (date: Date | null | undefined):string => {
-    if (!date) return '';
-    return date.toLocaleDateString('ru-RU', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
+const APIS = {
+  name: "floatrates",
+  url: "https://www.floatrates.com/daily/rub.json",
+  getParams: () => ({}),
+  parseResponse: (data: ApiResponse) => {
+    const rates: { [key: string]: number } = {};
+    const currenciesMap: { [key: string]: string } = {
+      usd: "USD",
+      eur: "EUR",
+      gbp: "GBP",
+      cny: "CNY",
+      jpy: "JPY",
+      chf: "CHF",
+    };
+    Object.keys(currenciesMap).forEach((key) => {
+      if (data[key]) {
+        rates[currenciesMap[key]] = 1 / data[key].rate;
+      }
     });
-  };
+    return { rates, date: new Date().toISOString().split("T")[0] };
+  },
+};
+
+const currenciesList: Currency[] = [
+  { code: "USD", name: "Доллар США", flag: "🇺🇸", symbol: "$" },
+  { code: "EUR", name: "Евро", flag: "🇪🇺", symbol: "€" },
+  { code: "GBP", name: "Фунт стерлингов", flag: "🇬🇧", symbol: "£" },
+  { code: "CNY", name: "Китайский юань", flag: "🇨🇳", symbol: "¥" },
+  { code: "JPY", name: "Японская иена", flag: "🇯🇵", symbol: "¥" },
+  { code: "CHF", name: "Швейцарский франк", flag: "🇨🇭", symbol: "₣" },
+];
 
 const Exchange: React.FC = () => {
-  const currenciesList: Currency[] = [
-    { code: 'USD', name: 'Доллар США', flag: '🇺🇸', symbol: '$' },
-    { code: 'EUR', name: 'Евро', flag: '🇪🇺', symbol: '€' },
-    { code: 'GBP', name: 'Фунт стерлингов', flag: '🇬🇧', symbol: '£' },
-    { code: 'CNY', name: 'Китайский юань', flag: '🇨🇳', symbol: '¥' },
-    { code: 'JPY', name: 'Японская иена', flag: '🇯🇵', symbol: '¥' },
-    { code: 'CHF', name: 'Швейцарский франк', flag: '🇨🇭', symbol: '₣' }
-  ];
-
-const [rates, setRates] = useState<Rate[]>([]);
-const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
+  const [rates, setRates] = useState<Rate[]>([]);
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
 
   const fetchRates = () => {
-    axios.get(APIS.url).then(response => {
+    axios.get(APIS.url).then((response) => {
       const parsed = APIS.parseResponse(response.data);
-      const ratesWithDetails = currenciesList.map(currency => ({
+      const ratesWithDetails = currenciesList.map((currency) => ({
         ...currency,
         rate: parsed.rates[currency.code],
-        value: parsed.rates[currency.code]
+        value: parsed.rates[currency.code],
       }));
       setRates(ratesWithDetails);
       setLastUpdate(new Date());
@@ -79,44 +78,44 @@ const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
   };
 
   useEffect(() => {
-    fetchRates(); // Первая загрузка
-    const interval = setInterval(fetchRates, 15 * 60 * 1000); // Каждые 15 минут
-    return () => clearInterval(interval); // Очистка при размонтировании
+    fetchRates();
+    const interval = setInterval(fetchRates, 15 * 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
-  
-    return(
-        <section className='Exchange_section'>
-        <div className='Exchange_header'>
-            <h3>Exchange rate in internet bank</h3>
-            <p>
-            {lastUpdate && (
-              <div className="last-update">
-                <span>Update every 15 minutes, MSC: {formatDate(lastUpdate)}</span>
-              </div>
-            )}
-            </p>
-        </div>
-        <div className='Exchange_header'>
-        <p className="Exchange_p__Currency">Currency</p>
-        </div>
-        <div className='Exchange_body'>
-            <div className='Exchange_grid'>
-              {rates.map((rate: Rate) => (
-                <article key={rate.code}>
-                      <span className='Exchange_code'> {rate.code}: </span>
-                      <span className='Exchange_rate'>
-                        {rate.rate.toFixed(2)}
-                      </span>
-                </article>
-              ))}
+
+  return (
+    <section className="Exchange_section">
+      <div className="Exchange_header">
+        <h3>Exchange rate in internet bank</h3>
+        <p>
+          {lastUpdate && (
+            <div className="last-update">
+              <span>
+                Update every 15 minutes, MSC: {formatDate(lastUpdate)}
+              </span>
             </div>
-            <img src={`${process.env.PUBLIC_URL}/${CARDS_PATH}/Group.svg`}></img>
+          )}
+        </p>
+      </div>
+      <div className="Exchange_header">
+        <p className="Exchange_p__Currency">Currency</p>
+      </div>
+      <div className="Exchange_body">
+        <div className="Exchange_grid">
+          {rates.map((rate: Rate) => (
+            <article key={rate.code}>
+              <span className="Exchange_code"> {rate.code}: </span>
+              <span className="Exchange_rate">{rate.rate.toFixed(2)}</span>
+            </article>
+          ))}
         </div>
-        <div className='Exchange_header'>
+        <img src={`${process.env.PUBLIC_URL}/${PATHS.ICONS}/Group.svg`}></img>
+      </div>
+      <div className="Exchange_header">
         <a>All courses</a>
-        </div>
-        </section>
-    );
-}
+      </div>
+    </section>
+  );
+};
 
 export default Exchange;

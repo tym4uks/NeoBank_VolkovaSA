@@ -1,184 +1,178 @@
-* {
-    box-sizing: border-box;
-}
-
-.Exchange_section {    
-    max-width: 1300px;
-    width: 100%;          /* Добавлено */
-    margin: 0 auto;       /* Исправлено с "auto" на "0 auto" */
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(rgba(244, 244, 244, 0.9), #b2b2b2);
-    box-sizing: border-box;
+.Exchange_section {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgba(244, 244, 244, 0.9), #b2b2b2);
+  box-sizing: border-box;
 }
 
 .Exchange_header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
 .Exchange_header h3 {
-    font-size: 30px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .Exchange_header a {
-    font-size: 20px;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .Exchange_p__Currency {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .Exchange_header p {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .Exchange_body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
 }
 
 .Exchange_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .Exchange_code {
-    font-weight: 700;
-    font-size: 20px;
-    color: #808080;
+  font-weight: 700;
+  font-size: 20px;
+  color: #808080;
 }
 
 .Exchange_rate {
-    font-weight: 700;
-    font-size: 20px;
-    color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
 }
 
-/* Tablet (max-width: 920px) */
 @media (max-width: 920px) {
-    .Exchange_section {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 20px;      /* Увеличено с 16px для заметности */
-        border-radius: 0;
-    }
-    
-    .Exchange_header {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    
-    .Exchange_header h3 {
-        font-size: 26px;
-    }
-    
-    .Exchange_header a {
-        font-size: 18px;
-    }
-    
-    .Exchange_p__Currency {
-        font-size: 18px;
-    }
-    
-    .Exchange_header p {
-        font-size: 14px;
-    }
-    
-    .Exchange_body {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .Exchange_grid {
-        width: 100%;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-    
-    .Exchange_code {
-        font-size: 18px;
-    }
-    
-    .Exchange_rate {
-        font-size: 18px;
-    }
+  .Exchange_section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+  }
 
-    .Exchange_section img {
-        display: none;
-    }
+  .Exchange_header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .Exchange_header h3 {
+    font-size: 26px;
+  }
+
+  .Exchange_header a {
+    font-size: 18px;
+  }
+
+  .Exchange_p__Currency {
+    font-size: 18px;
+  }
+
+  .Exchange_header p {
+    font-size: 14px;
+  }
+
+  .Exchange_body {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .Exchange_grid {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .Exchange_code {
+    font-size: 18px;
+  }
+
+  .Exchange_rate {
+    font-size: 18px;
+  }
+
+  .Exchange_section img {
+    display: none;
+  }
 }
 
-/* Mobile (max-width: 500px) */
 @media (max-width: 500px) {
-    .Exchange_section {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 16px 12px;
-        border-radius: 0;
-    }
-    
-    .Exchange_header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    
-    .Exchange_header h3 {
-        font-size: 22px;
-    }
-    
-    .Exchange_header a {
-        font-size: 16px;
-    }
-    
-    .Exchange_p__Currency {
-        font-size: 16px;
-    }
-    
-    .Exchange_header p {
-        font-size: 13px;
-    }
-    
-    .Exchange_body {
-        gap: 12px;
-    }
-    
-    .Exchange_grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    
-    .Exchange_code {
-        font-size: 16px;
-    }
-    
-    .Exchange_rate {
-        font-size: 16px;
-    }
-    
-    .Exchange_section img {
-        display: none;
-    }
+  .Exchange_section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 16px 12px;
+    border-radius: 0;
+  }
+
+  .Exchange_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .Exchange_header h3 {
+    font-size: 22px;
+  }
+
+  .Exchange_header a {
+    font-size: 16px;
+  }
+
+  .Exchange_p__Currency {
+    font-size: 16px;
+  }
+
+  .Exchange_header p {
+    font-size: 13px;
+  }
+
+  .Exchange_body {
+    gap: 12px;
+  }
+
+  .Exchange_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .Exchange_code {
+    font-size: 16px;
+  }
+
+  .Exchange_rate {
+    font-size: 16px;
+  }
+
+  .Exchange_section img {
+    display: none;
+  }
 }

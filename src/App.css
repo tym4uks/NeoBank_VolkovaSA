@@ -1,45 +1,46 @@
-body {
-  background-color: #F5F4FF;
+* {
+  box-sizing: border-box;
 }
 
-button{
+body {
+  background-color: #f5f4ff;
+}
+
+button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #003CFF;
+  background-color: #003cff;
   width: 130px;
   height: 50px;
   border-width: 0px;
   border-radius: 16px;
   padding: 8;
   gap: 8;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 2%;
   font-family: Ubuntu;
 }
 
-/* Tablet (max-width: 920px) */
 @media (max-width: 920px) {
-    button {
-        width: 120px;
-        height: 45px;
-        font-size: 15px;
-        border-radius: 14px;
-        padding: 6px;
-    }
+  button {
+    width: 120px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 14px;
+    padding: 6px;
+  }
 }
 
-/* Mobile (max-width: 500px) */
 @media (max-width: 500px) {
-    button {
-        width: 100%;
-        max-width: 200px;
-        height: 45px;
-        font-size: 14px;
-        border-radius: 12px;
-        padding: 6px;
-    }
+  button {
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 6px;
+  }
 }
-
