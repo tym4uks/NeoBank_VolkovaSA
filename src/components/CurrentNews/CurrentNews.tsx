@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./CurrentNews.css";
 import { PATHS } from "../../constants/paths";
+const PROXY = "https://cors-anywhere.herokuapp.com/";
 
 interface NewsArticle {
   url: string;
@@ -52,9 +53,12 @@ function CurrentNews() {
   const translateValue = getTranslateValue();
 
   useEffect(() => {
-    fetch(`${PATHS.NEWS_API.BASE_URL}/top-headlines?country=us&pageSize=20`, {
-      headers: { "X-Api-Key": PATHS.NEWS_API.KEY },
-    })
+    fetch(
+      `${PROXY}${PATHS.NEWS_API.BASE_URL}/top-headlines?country=us&pageSize=20`,
+      {
+        headers: { "X-Api-Key": PATHS.NEWS_API.KEY },
+      },
+    )
       .then((res) => res.json())
       .then((data) => {
         const validNews = data.articles.filter(
