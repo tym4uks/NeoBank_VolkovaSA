@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import "./CurrentNews.css";
 import { PATHS } from "../../constants/paths";
-const PROXY = "https://cors-anywhere.herokuapp.com/";
 
 interface NewsArticle {
-  url: string;
-  urlToImage: string | null;
+  // url: string;
+  // urlToImage: string | null;
+  // title: string;
+  // description: string | null;
+  link: string;
+  image_url: string | null;
   title: string;
   description: string | null;
 }
@@ -53,25 +56,35 @@ function CurrentNews() {
   const translateValue = getTranslateValue();
 
   useEffect(() => {
-    fetch(
-      `${PROXY}${PATHS.NEWS_API.BASE_URL}/top-headlines?country=us&pageSize=20`,
-      {
-        headers: { "X-Api-Key": PATHS.NEWS_API.KEY },
-      },
-    )
-      .then((res) => res.json())
+    // NewsData.io работает напрямую из браузера, без прокси
+    const url = `${PATHS.NEWS_API.BASE_URL}/news?country=us&apikey=${PATHS.NEWS_API.KEY}`;
+
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
-        const validNews = data.articles.filter(
-          (article: NewsArticle) =>
-            article.urlToImage &&
-            article.urlToImage !== "" &&
-            article.urlToImage !== null,
+        console.log("NewsData response:", data); // Для отладки
+
+        // NewsData.io возвращает данные в поле "results"
+        const articles = data.results || [];
+
+        // Фильтруем новости с изображениями
+        const validNews = articles.filter(
+          (article: any) =>
+            article.image_url &&
+            article.image_url !== "" &&
+            article.image_url !== null,
         );
+
         setCards(validNews);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Ошибка:", error);
+        console.error("Ошибка загрузки новостей:", error);
         setLoading(false);
       });
   }, []);
@@ -93,13 +106,13 @@ function CurrentNews() {
           }}
         >
           {cards.map((card) => (
-            <div key={card.url} className="slider-card">
-              <img src={card.urlToImage || ""} />
+            <div key={card.link} className="slider-card">
+              <img src={card.image_url || ""} />
               <h3>{card.title}</h3>
               <p>
                 {card.description?.replace(/<[^>]*>/g, "") || "Нет описания"}
               </p>
-              <a href={card.url} target="_blank" rel="noopener noreferrer">
+              <a href={card.link} target="_blank" rel="noopener noreferrer">
                 Читать далее ...
               </a>
             </div>
