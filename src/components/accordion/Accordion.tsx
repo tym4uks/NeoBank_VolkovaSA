@@ -48,7 +48,7 @@ function Accordion({
           >
             <span className="accordion-title">{item.title}</span>
             <span className="accordion-icon">
-              {openIndexes.includes(index) ? "−" : "+"}
+              {openIndexes.includes(index) ? "˄" : "˅"}
             </span>
           </button>
           {openIndexes.includes(index) && (
