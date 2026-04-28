@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./MapServices.css";
-import { PATHS } from "../../constants/paths";
+import { PATHS } from "../../../constants/paths";
 
 function MapServices() {
   return (

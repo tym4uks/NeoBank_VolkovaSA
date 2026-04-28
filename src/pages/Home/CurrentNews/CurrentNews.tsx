@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./CurrentNews.css";
-import { PATHS } from "../../constants/paths";
+import { PATHS } from "../../../constants/paths";
 
 interface NewsArticle {
   // url: string;

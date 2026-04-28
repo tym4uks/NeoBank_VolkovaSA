@@ -1,0 +1,78 @@
+.BestCard_section {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#cbd5e0c7, #feebc8b2);
+  box-sizing: border-box;
+}
+
+.BestCard_section__info {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BestCard_info__title {
+  padding-bottom: 48px;
+  padding-top: 48px;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+.BestCard_info__description {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #2d3748;
+  padding-bottom: 42px;
+}
+
+.BestCard_info__benefits {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  padding-bottom: 32px;
+}
+
+.BestCard_info__benefits-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #3d3d3d;
+}
+
+.BestCard_info__benefits-note {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: #3d3d3d;
+}
+
+.BestCard_img {
+  display: inline-flex;
+  height: fit-content;
+  margin: 50px;
+}
+
+.BestCard_img > img {
+  border-radius: 20px;
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  rotate: 10deg;
+}
+/* @media (max-width: 920px) {
+}
+
+@media (max-width: 500px) {
+ 
+} */

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Design.css";
-import { PATHS } from "../../constants/paths";
+import { PATHS } from "../../../constants/paths";
 
 function Design() {
   return (

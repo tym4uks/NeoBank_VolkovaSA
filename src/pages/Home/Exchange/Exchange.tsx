@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./Exchange.css";
-import { formatDate } from "../utility";
-import { PATHS } from "../../constants/paths";
+import { formatDate } from "../../../components/utility";
+import { PATHS } from "../../../constants/paths";
 
 interface CurrencyData {
   rate: number;

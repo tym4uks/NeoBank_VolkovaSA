@@ -1,0 +1,45 @@
+.Cashback-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Cashback_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.Cashback-placeholder {
+  flex: 1 1 calc(33.333% - 20px);
+  max-height: 163px;
+  padding: 32px;
+  gap: 22px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.Cashback_card-gray {
+  background-color: #88b3b899;
+}
+
+.Cashback_card-white {
+  background-color: #eaecee;
+}
+
+.Cashback_param {
+  color: #434343e5;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.Cashback_value {
+  color: #000000;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}

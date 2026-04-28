@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Features.css";
-import { PATHS } from "../../constants/paths";
+import { PATHS } from "../../../constants/paths";
 
 function Features() {
   // const CARDS_PATH = "/assets";

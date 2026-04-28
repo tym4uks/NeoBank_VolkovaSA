@@ -1,13 +1,10 @@
 import "@openfonts/ubuntu_all/index.css";
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Design from "./components/Design/Design";
-import Features from "./components/Features/Features";
-import Exchange from "./components/Exchange/Exchange";
-import MapServices from "./components/MapServices/MapServices";
-import CurrentNews from "./components/CurrentNews/CurrentNews";
-import Feedback from "./components/Feedback/Feedback";
 import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import Loan from "./pages/Loan/Loan";
 
 import "./App.css";
 
@@ -15,14 +12,13 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        <Design />
-        <Features />
-        <Exchange />
-        <MapServices />
-        <CurrentNews />
-        <Feedback />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/loan" element={<Loan />} />
+        <Route path="/product" element={<div>Product Page</div>} />
+        <Route path="/account" element={<div>Account Page</div>} />
+        <Route path="/resources" element={<div>Resources Page</div>} />
+      </Routes>
       <Footer />
     </>
   );

@@ -1,0 +1,34 @@
+.rate-table-container {
+  overflow-x: auto;
+}
+
+.rate-table {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rate-table th,
+.rate-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid #7f92ac;
+}
+
+.rate-table th {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.rate-table td:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.rate-table td:last-child {
+  color: #434343;
+  font-size: 16px;
+  font-weight: 500;
+}
