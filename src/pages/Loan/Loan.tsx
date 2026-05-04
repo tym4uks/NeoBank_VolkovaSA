@@ -1,6 +1,7 @@
 import React from "react";
 import "./Loan.css";
 import BestCard from "./BestCard/BestCard";
+import CardForm from "./GetCard/CardFrom/CardForm";
 import Tabs from "../../components/tabs/Tabs";
 import About from "./BestCard/sections/About/About";
 import Rates from "./BestCard/sections/Rates/Rates";
@@ -35,6 +36,7 @@ function Loan() {
     <main>
       <BestCard />
       <Tabs tabs={tabs} defaultActiveTab={1} />
+      <CardForm />
     </main>
   );
 }

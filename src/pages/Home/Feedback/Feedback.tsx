@@ -1,8 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Feedback.css";
 import { PATHS } from "../../../constants/paths";
+import axios from "axios";
 
 function Feedback() {
+  const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+
+  useEffect(() => {
+    let savedEmail = localStorage.getItem("email");
+    if (savedEmail !== null) {
+      setIsEmailSent(true);
+    }
+  }, []);
+
+  const fetchEmail = () => {
+    // axios
+    //   .post("/email", { email })
+    //   // .then(() => {})
+    //   .finally(() => {
+    setIsEmailSent(true);
+    localStorage.setItem("email", email);
+    // });
+  };
+
   return (
     <section className="Feedback_section">
       <a className="Feedback__support">Support</a>
@@ -10,8 +31,20 @@ function Feedback() {
       <a className="Feedback__title_light">Bank News</a>
       <div className="Feedback__subscribe">
         <img src={`${process.env.PUBLIC_URL}/${PATHS.ICONS}/email.svg`}></img>
-        <input type="text" placeholder="Your email" />
-        <button className="Feedback__button">
+        {!isEmailSent && (
+          <input
+            type="text"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        )}
+        {isEmailSent && (
+          <span>You are already subscribed to the bank's newsletter</span>
+        )}
+        <button className="Feedback__button" onClick={fetchEmail}>
           <img
             src={`${process.env.PUBLIC_URL}/${PATHS.ICONS}/Subscribe icon.svg`}
           ></img>

@@ -1,7 +1,7 @@
 .BestCard_section {
-  max-width: 1300px;
+  max-width: 1260px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 32px;
@@ -70,9 +70,100 @@
   object-fit: contain;
   rotate: 10deg;
 }
-/* @media (max-width: 920px) {
+
+@media (max-width: 1300px) {
+  .BestCard_section {
+    margin: 0 20px;
+    width: auto;
+  }
+}
+
+@media (max-width: 920px) {
+  .BestCard_section {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    margin: 0 20px;
+  }
+
+  .BestCard_section__info {
+    align-items: center;
+    width: 100%;
+  }
+
+  .BestCard_info__title {
+    font-size: 36px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
+
+  .BestCard_info__description {
+    font-size: 14px;
+    padding-bottom: 32px;
+  }
+
+  .BestCard_info__benefits {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 24px;
+  }
+
+  .BestCard_info__benefits-title {
+    font-size: 18px;
+  }
+
+  .BestCard_info__benefits-note {
+    font-size: 14px;
+  }
+
+  .BestCard_img {
+    margin: 30px 0 20px 0;
+  }
+
+  .BestCard_img > img {
+    width: 320px;
+    rotate: 5deg;
+  }
 }
 
 @media (max-width: 500px) {
- 
-} */
+  .BestCard_section {
+    padding: 20px;
+    margin: 0 16px;
+    border-radius: 16px;
+  }
+
+  .BestCard_info__title {
+    font-size: 28px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  .BestCard_info__description {
+    font-size: 13px;
+    padding-bottom: 24px;
+  }
+
+  .BestCard_info__benefits {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 20px;
+  }
+
+  .BestCard_info__benefits-title {
+    font-size: 16px;
+  }
+
+  .BestCard_info__benefits-note {
+    font-size: 13px;
+  }
+
+  .BestCard_img {
+    margin: 20px 0 16px 0;
+  }
+
+  .BestCard_img > img {
+    width: 260px;
+    rotate: 3deg;
+  }
+}

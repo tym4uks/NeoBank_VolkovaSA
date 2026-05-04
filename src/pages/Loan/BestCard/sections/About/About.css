@@ -2,7 +2,6 @@
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .card-grid {
@@ -72,5 +71,11 @@
 @media (max-width: 480px) {
   .card-placeholder {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .BestCard_section {
+
   }
 }

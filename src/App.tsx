@@ -18,6 +18,7 @@ function App() {
         <Route path="/product" element={<div>Product Page</div>} />
         <Route path="/account" element={<div>Account Page</div>} />
         <Route path="/resources" element={<div>Resources Page</div>} />
+        <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
     </>
