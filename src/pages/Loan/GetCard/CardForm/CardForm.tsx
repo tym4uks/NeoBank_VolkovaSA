@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";  // ← УДАЛИТЬ
+import { setOffers, setLoading } from "../../../../store/loanSlice";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import SuccessIcon from "../../../../components/icons/SuccessIcon";
@@ -17,6 +20,10 @@ interface FormData {
   passportNumber: string;
 }
 
+interface CardFormProps {
+  onSuccess?: () => void; // ← ДОБАВИТЬ
+}
+
 const termOptions = [
   { value: "6", label: "6 month" },
   { value: "12", label: "12 month" },
@@ -24,16 +31,21 @@ const termOptions = [
   { value: "24", label: "24 month" },
 ];
 
-function CardForm() {
+function CardForm({ onSuccess }: CardFormProps) {
+  // ← ДОБАВИТЬ пропс
+  const dispatch = useDispatch();
+  // const navigate = useNavigate();  // ← УДАЛИТЬ
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [amountValue, setAmountValue] = useState(150000);
   const [inputValue, setInputValue] = useState("");
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>(
     {},
   );
+
   const markTouched = (fieldName: string) => {
     setTouchedFields((prev) => ({ ...prev, [fieldName]: true }));
   };
+
   const {
     register,
     handleSubmit,
@@ -47,6 +59,7 @@ function CardForm() {
   const formatDisplayValue = (value: number): string => {
     return `${value.toLocaleString("ru-RU")} ₽`;
   };
+
   useEffect(() => {
     if (focusedField !== "amount") {
       setInputValue(formatDisplayValue(amountValue));
@@ -63,6 +76,7 @@ function CardForm() {
     const numbersOnly = rawValue.replace(/[^\d]/g, "");
     setInputValue(numbersOnly);
   };
+
   const handleAmountBlur = () => {
     let numValue = parseInt(inputValue, 10);
     if (isNaN(numValue)) {
@@ -72,9 +86,10 @@ function CardForm() {
 
     setAmountValue(numValue);
     setValue("amount", numValue, { shouldValidate: true });
-    setInputValue(formatDisplayValue(numValue)); // форматируем для отображения
+    setInputValue(formatDisplayValue(numValue));
     setFocusedField(null);
   };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleAmountBlur();
@@ -90,8 +105,62 @@ function CardForm() {
     }
   };
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
+  const generateMockOffers = (amount: number, term: number) => {
+    return [
+      {
+        id: 1,
+        requestedAmount: amount,
+        totalAmount: amount,
+        term: term,
+        monthlyPayment: 9697,
+        rate: 15,
+        insuranceIncluded: false,
+        salaryClient: false,
+      },
+      {
+        id: 2,
+        requestedAmount: amount,
+        totalAmount: amount,
+        term: term,
+        monthlyPayment: 9788,
+        rate: 11,
+        insuranceIncluded: true,
+        salaryClient: true,
+      },
+      {
+        id: 3,
+        requestedAmount: amount,
+        totalAmount: amount,
+        term: term,
+        monthlyPayment: 9603,
+        rate: 14,
+        insuranceIncluded: false,
+        salaryClient: false,
+      },
+      {
+        id: 4,
+        requestedAmount: amount,
+        totalAmount: amount,
+        term: term,
+        monthlyPayment: 9690,
+        rate: 10,
+        insuranceIncluded: false,
+        salaryClient: true,
+      },
+    ];
+  };
+
+  const onSubmit = async (data: FormData) => {
+    dispatch(setLoading(true));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const offers = generateMockOffers(amountValue, Number(data.term));
+    dispatch(setOffers(offers));
+    dispatch(setLoading(false));
+
+    // ВЫЗЫВАЕМ callback, если он передан
+    if (onSuccess) {
+      onSuccess();
+    }
   };
 
   const isValidDate = (date: string) => {
@@ -107,42 +176,6 @@ function CardForm() {
 
   return (
     <div className="CardForm_section">
-      <h2>How to get a card</h2>
-
-      <div className="steps-list">
-        <div className="step-item">
-          <div className="step-top-row">
-            <div className="step-number">1</div>
-            <div className="step-divider"></div>
-          </div>
-          <div className="step-description">
-            Fill out an online application - you do not need to visit the bank
-          </div>
-        </div>
-
-        <div className="step-item">
-          <div className="step-top-row">
-            <div className="step-number">2</div>
-            <div className="step-divider"></div>
-          </div>
-          <div className="step-description">
-            Find out the bank's decision immediately after filling out the
-            application
-          </div>
-        </div>
-
-        <div className="step-item">
-          <div className="step-top-row">
-            <div className="step-number">3</div>
-            <div className="step-divider"></div>
-          </div>
-          <div className="step-description">
-            The bank will deliver the card free of charge, wherever convenient,
-            to your city
-          </div>
-        </div>
-      </div>
-
       <div className="customize_block">
         <div className="customize-UpBlock">
           <div className="customize-leftBlock">
@@ -195,6 +228,7 @@ function CardForm() {
 
         <h3 className="customize-title">Contact Information</h3>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          {/* Ряд 1 */}
           <div className="form-row">
             <FormField
               label="Your last name"
@@ -428,6 +462,7 @@ function CardForm() {
               />
             </FormField>
           </div>
+
           <div className="submit-button">
             <button type="submit" disabled={isSubmitting || !isValid}>
               {isSubmitting ? <span className="loader"></span> : "Continue"}

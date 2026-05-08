@@ -13,52 +13,6 @@
   text-align: center;
 }
 
-.steps-list {
-  display: inline-flex;
-  justify-content: space-between;
-  gap: 20px;
-  list-style: none;
-}
-
-.step-item {
-  flex: 1;
-  text-align: center;
-  flex-direction: column;
-}
-.step-top-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.step-number {
-  width: 48px;
-  height: 48px;
-  background: #d9d9d9;
-  color: #000000;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.step-divider {
-  flex: 1;
-  height: 2px;
-  background: #80808033;
-  margin-left: 36px;
-}
-.step-description {
-  font-size: 16px;
-  font-weight: 500;
-  color: #000000;
-  text-align: center;
-  padding-bottom: 44px;
-}
-
 .customize_block {
   background-color: #ffffff;
   border-radius: 28px;
