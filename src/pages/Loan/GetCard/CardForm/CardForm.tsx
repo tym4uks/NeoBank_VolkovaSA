@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";  // ← УДАЛИТЬ
 import { setOffers, setLoading } from "../../../../store/loanSlice";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -21,7 +20,7 @@ interface FormData {
 }
 
 interface CardFormProps {
-  onSuccess?: () => void; // ← ДОБАВИТЬ
+  onSuccess?: () => void;
 }
 
 const termOptions = [
@@ -32,9 +31,7 @@ const termOptions = [
 ];
 
 function CardForm({ onSuccess }: CardFormProps) {
-  // ← ДОБАВИТЬ пропс
   const dispatch = useDispatch();
-  // const navigate = useNavigate();  // ← УДАЛИТЬ
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [amountValue, setAmountValue] = useState(150000);
   const [inputValue, setInputValue] = useState("");

@@ -28,10 +28,18 @@
 .Feedback__subscribe {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 525px;
   background-color: white;
   padding: 30px;
   border-radius: 20px;
   gap: 15px;
+}
+
+.Feedback__subscribe > div {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .Feedback__subscribe img {
@@ -67,6 +75,12 @@
 .Feedback__button img {
   width: 40px;
   height: 40px;
+}
+
+.Feedback__span {
+  color: #9092b0;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 @media (max-width: 920px) {

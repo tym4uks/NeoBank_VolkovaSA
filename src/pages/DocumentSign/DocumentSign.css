@@ -1,0 +1,112 @@
+.document-sign {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.document-sign__container {
+  background: none;
+  border-radius: none;
+  padding: 32px;
+  box-shadow: none;
+}
+
+.document-sign__header {
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+
+.document-sign__header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1c1c1e;
+}
+.disclaimer-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4f5665;
+}
+.document-sign__step {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.pdf-info {
+  display: flex;
+  align-items: center;
+}
+.pdf-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.document-sign__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.document-sign__actions span {
+  padding-right: 80px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a202c;
+}
+.document-sign__actions input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.btn-sign {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-sign:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.sign__success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  padding: 40px 20px;
+}
+
+.success-card {
+  text-align: center;
+  max-width: 100%;
+  padding: 48px;
+  background: none;
+  border-radius: none;
+  box-shadow: none;
+}
+
+.success-icon {
+  font-size: 64px;
+}
+
+.success-card h2 {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .pdf-frame {
+    height: 400px;
+  }
+
+  .document-sign__actions {
+    flex-direction: column;
+  }
+
+  .btn-back,
+  .btn-sign {
+    width: 100%;
+  }
+}

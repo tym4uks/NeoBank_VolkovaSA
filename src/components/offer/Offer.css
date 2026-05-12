@@ -24,10 +24,13 @@
 .offer-card__content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
-
+.offer-card__content > img {
+  height: 150px;
+  width: 150px;
+}
 .offer-card__row {
   display: flex;
   justify-content: space-between;
@@ -50,24 +53,10 @@
   color: #1a1a1a;
 }
 
-.offer-card__rate {
-  color: #5b35d5;
-  font-size: 16px;
-}
-
 .offer-card__button {
   width: 100%;
   padding: 12px;
   cursor: pointer;
-}
-
-.offer-card__button:hover:not(:disabled) {
-  background: #4a2ab0;
-}
-
-.offer-card__button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {

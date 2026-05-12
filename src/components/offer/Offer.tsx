@@ -1,6 +1,9 @@
 import React from "react";
 import { LoanOffer } from "../../store/loanSlice";
 import { PATHS } from "../../constants/paths";
+import SuccessIcon from "../icons/SuccessIcon";
+import ErrorIcon from "../icons/ErrorIcon";
+
 import "./Offer.css";
 
 interface OfferCardProps {
@@ -39,20 +42,26 @@ function Offer({ offer, onSelect, isSelected }: OfferCardProps) {
         </div>
         <div className="offer-card__row">
           <span className="offer-card__label">Your rate:</span>
-          <span className="offer-card__value offer-card__rate">
-            {offer.rate}%
-          </span>
+          <span className="offer-card__value">{offer.rate}%</span>
         </div>
         <div className="offer-card__row">
           <span className="offer-card__label">Insurance included:</span>
           <span className="offer-card__value">
-            {offer.insuranceIncluded ? "✅" : "❌"}
+            {offer.insuranceIncluded ? (
+              <SuccessIcon size={18} />
+            ) : (
+              <ErrorIcon size={18} />
+            )}
           </span>
         </div>
         <div className="offer-card__row">
           <span className="offer-card__label">Salary client:</span>
           <span className="offer-card__value">
-            {offer.salaryClient ? "✅" : "❌"}
+            {offer.salaryClient ? (
+              <SuccessIcon size={18} />
+            ) : (
+              <ErrorIcon size={18} />
+            )}
           </span>
         </div>
       </div>
