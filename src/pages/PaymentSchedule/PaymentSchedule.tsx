@@ -120,35 +120,26 @@ function PaymentSchedule() {
         </div>
       </div>
 
-      {/* Первое модальное окно - предупреждение */}
       <Modal
         isOpen={isDenyModalOpen}
         onClose={() => setIsDenyModalOpen(false)}
-        title="Cancel application"
+        title="Deny application"
       >
-        <p>Are you sure you want to cancel your application?</p>
-        <p>This action cannot be undone.</p>
+        <p>You exactly sure, you want to cancel this application?</p>
         <div className="modal-buttons">
-          <button
-            className="btn-cancel"
-            onClick={() => setIsDenyModalOpen(false)}
-          >
-            Go back
-          </button>
-          <button className="btn-confirm-deny" onClick={handleDeny}>
+          <button className="btn-deny" onClick={handleDeny}>
             Deny
           </button>
+          <button onClick={() => setIsDenyModalOpen(false)}>Cancel</button>
         </div>
       </Modal>
 
-      {/* Второе модальное окно - подтверждение отказа */}
       <Modal
         isOpen={isDenyConfirmModalOpen}
         onClose={() => setIsDenyConfirmModalOpen(false)}
-        title="Application cancelled"
+        title="Deny application"
       >
-        <p>Your application has been cancelled.</p>
-        <p>You can submit a new application anytime.</p>
+        <p>Your application has been deny!</p>
         <div className="modal-buttons">
           <button className="btn-home" onClick={handleGoHome}>
             Go home

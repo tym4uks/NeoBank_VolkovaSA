@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { RootState } from "../../../../store/store";
 import {
   LoanOffer,
@@ -12,19 +13,21 @@ import "./CardOffers.css";
 
 function CardOffers() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { offers, selectedOffer, isLoading } = useSelector(
     (state: RootState) => state.loan,
   );
   const [applicationStatus, setApplicationStatus] = useState<string | null>(
     null,
   );
-
+  const [applicationId, setApplicationId] = useState<string | null>(null);
   const handleSelectOffer = async (offer: LoanOffer) => {
     dispatch(selectOffer(offer));
     dispatch(setLoading(true));
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
+
       dispatch(setApplicationSent(true));
       setApplicationStatus("success");
     } catch (error) {
@@ -33,6 +36,16 @@ function CardOffers() {
       dispatch(setLoading(false));
     }
   };
+
+  useEffect(() => {
+    if (applicationStatus === "success") {
+      const timer = setTimeout(() => {
+        navigate(`/loan/:applicationId`);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [applicationStatus, applicationId, navigate]);
 
   if (applicationStatus === "success") {
     return (

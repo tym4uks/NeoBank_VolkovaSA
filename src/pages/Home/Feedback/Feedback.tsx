@@ -9,12 +9,25 @@ function Feedback() {
   const [email, setEmail] = useState<string>("");
 
   useEffect(() => {
-    let savedEmail = localStorage.getItem("email");
+    const savedEmail = localStorage.getItem("email");
+    const savedSubscribed = localStorage.getItem("isSubscribed");
+
     if (savedEmail !== null) {
+      setEmail(savedEmail);
       setIsEmailSent(true);
     }
-  }, []);
 
+    if (savedSubscribed === "true") {
+      setIsSubscribed(true);
+    }
+  }, []);
+  const handleUnsubscribe = () => {
+    setIsSubscribed(false);
+    setIsEmailSent(false);
+    setEmail("");
+    localStorage.removeItem("email");
+    localStorage.removeItem("isSubscribed");
+  };
   const fetchEmail = () => {
     // axios
     //   .post("/email", { email })
@@ -23,6 +36,7 @@ function Feedback() {
     setIsEmailSent(true);
     setIsSubscribed(true);
     localStorage.setItem("email", email);
+    localStorage.setItem("isSubscribed", "true");
     // });
   };
 
@@ -49,8 +63,10 @@ function Feedback() {
                 }}
               />
             )}
+
             {isEmailSent && <span className="Feedback__span">Your email</span>}
           </div>
+
           <button className="Feedback__button" onClick={fetchEmail}>
             <img
               src={`${process.env.PUBLIC_URL}/${PATHS.ICONS}/Subscribe icon.svg`}
@@ -66,6 +82,7 @@ function Feedback() {
           </span>
         </div>
       )}
+      {isSubscribed && <button onClick={handleUnsubscribe}>Unsubscribe</button>}
     </section>
   );
 }

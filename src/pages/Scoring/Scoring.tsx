@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -47,8 +47,8 @@ const positionOptions = [
 
 function Scoring() {
   const { applicationId } = useParams<{ applicationId: string }>();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -102,6 +102,15 @@ function Scoring() {
       dispatch(setLoading(false));
     }
   };
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        navigate(`/loan/:applicationId/document`);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted, applicationId, navigate]);
 
   if (isSubmitted) {
     return (

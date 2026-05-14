@@ -49,19 +49,7 @@ function Modal({
         <div className="modal-body">{children}</div>
         {(onConfirm || cancelText) && (
           <div className="modal-footer">
-            {cancelText && (
-              <button className="modal-btn modal-btn-cancel" onClick={onClose}>
-                {cancelText}
-              </button>
-            )}
-            {onConfirm && (
-              <button
-                className="modal-btn modal-btn-confirm"
-                onClick={onConfirm}
-              >
-                {confirmText}
-              </button>
-            )}
+            {onConfirm && <button onClick={onConfirm}>{confirmText}</button>}
           </div>
         )}
       </div>

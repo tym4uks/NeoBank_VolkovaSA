@@ -2,6 +2,7 @@ export const PATHS = {
   ASSETS: "/assets",
   IMAGES: "/assets/images",
   ICONS: "/assets/icons",
+  PDF: "/assets/pdf",
   NEWS_API: {
     // BASE_URL: "https://newsapi.org/v2",
     // KEY: "f13b65083542451eae651fb001dd66fd",

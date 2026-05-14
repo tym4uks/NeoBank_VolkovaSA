@@ -82,7 +82,16 @@ function DocumentSign() {
             of personal data, a form of consent to the processing of personal
             data.
           </p>
-          <div className="pdf-info" onClick={() => setIsModalOpen(true)}>
+          <div
+            className="pdf-info"
+            onClick={() =>
+              window.open(
+                `${process.env.PUBLIC_URL}${PATHS.PDF}/credit-card-offer.pdf`,
+                "_blank",
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
             <div className="pdf-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
