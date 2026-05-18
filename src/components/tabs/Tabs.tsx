@@ -13,7 +13,11 @@ interface TabsProps {
   onChange?: (tabId: number) => void;
 }
 
-function Tabs({ tabs, defaultActiveTab = 0, onChange }: TabsProps) {
+function Tabs({
+  tabs,
+  defaultActiveTab = tabs[0]?.id || 0,
+  onChange,
+}: TabsProps) {
   const [activeTab, setActiveTab] = useState<number>(defaultActiveTab);
 
   const handleTabClick = (tabId: number) => {
