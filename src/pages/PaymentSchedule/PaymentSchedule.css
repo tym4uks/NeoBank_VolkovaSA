@@ -1,0 +1,152 @@
+.payment-schedule {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.payment-schedule__container {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.payment-schedule__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+}
+
+.payment-schedule__header h2 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #1c1c1e;
+  margin: 0;
+}
+
+.payment-schedule__step {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.payment-schedule__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.agree-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-deny {
+  background: white;
+  border: 1px solid #d93737cc;
+  color: #d93737cc;
+  cursor: pointer;
+}
+
+.btn-deny:hover {
+  background: #d93737cc;
+  color: white;
+}
+
+.btn-send:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.payment-schedule__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.payment-schedule__success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  padding: 40px 20px;
+}
+
+/* .success-card {
+  text-align: center;
+  max-width: 500px;
+  padding: 48px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+} */
+
+.success-icon {
+  font-size: 64px;
+}
+
+.success-card h2 {
+  font-size: 30px;
+  max-width: 700px;
+  color: #1e1c1d;
+  margin-bottom: 32px;
+}
+
+.success-card p {
+  font-size: 16px;
+
+  color: #4f5665;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-cancel,
+.btn-home {
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #5b35d5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-schedule__actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .agree-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-send,
+  .btn-deny {
+    width: 100%;
+  }
+}
